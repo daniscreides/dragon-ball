@@ -22,13 +22,18 @@ export default function Header({ search, setSearch }) {
       <img src={logo} alt="Logo Dragon Ball" className="logo" />
 
       <nav className="menu">
+        {/* SEMPRE aparece */}
         <button onClick={irInicio}>INÍCIO</button>
-        <button onClick={() => navigate("/sobre")}>SOBRE</button>
 
+        {/* SÓ NA HOME */}
         {location.pathname === "/" && (
-          <button onClick={irContato}>CONTATO</button>
+          <>
+            <button onClick={() => navigate("/sobre")}>SOBRE</button>
+            <button onClick={irContato}>CONTATO</button>
+          </>
         )}
       </nav>
+
 
       {location.pathname === "/" && (
         <input
