@@ -16,16 +16,18 @@ html, body {
 body {
   background: linear-gradient(135deg, #0a0a0a, #1b1b1b, #222);
   color: #fff;
+  perspective: 1500px; /* necessário para efeito 3D */
 }
 
+/* ===== HEADER ===== */
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  margin-bottom: 50px;
-  width: 100%;
+  flex-wrap: wrap;
   background: #f4f4f4;
+  margin-bottom: 50px;
 }
 
 header .logo {
@@ -36,6 +38,7 @@ header .logo {
 .menu {
   display: flex;
   gap: 30px;
+  flex-wrap: wrap;
 }
 
 .menu a {
@@ -50,9 +53,10 @@ header .logo {
   border-radius: 6px;
   border: 1px solid #aaa;
   max-width: 200px;
+  margin-top: 10px;
 }
 
-/* ===== MAIN E CARDS ===== */
+/* ===== MAIN / CARDS ===== */
 main {
   display: grid;
   gap: 30px;
@@ -68,20 +72,22 @@ main {
   border-radius: 14px;
   text-align: center;
   border: 2px solid transparent;
-  box-shadow: 0 0 15px rgba(0,0,0,0.7);
+  box-shadow: 0 0 20px rgba(0,0,0,0.7);
   cursor: pointer;
-  overflow: visible; /* permite que a imagem flutue */
+  overflow: visible;
   position: relative;
-  transition: transform 0.3s ease;
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .card:hover {
-  transform: translateY(-8px); /* elevação suave do card */
+  transform: rotateY(5deg) rotateX(5deg) translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.8);
 }
 
 .img-container {
   width: 100%;
-  height: 350px; /* altura fixa do container */
+  height: 350px;
   overflow: visible;
   display: flex;
   justify-content: center;
@@ -93,24 +99,15 @@ main {
   width: auto;
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain; /* mantém proporção e não corta */
+  object-fit: contain;
   border-radius: 12px;
   transition: transform 0.5s ease;
   position: relative;
   z-index: 2;
 }
 
-.img-container:hover img {
-  transform: translateY(-20px) scale(1.2); /* flutua levemente para fora */
-}
-
-.card-content {
-  padding: 15px 10px;
-  position: relative;
-  z-index: 3;
-  background: #181818;
-  margin-top: -50px; /* sobreposição suave da imagem flutuante */
-  border-radius: 0 0 14px 14px;
+.card:hover .img-container img {
+  transform: translateY(-40px) translateX(10px) scale(1.25) rotateZ(-3deg);
 }
 
 .card h2 {
@@ -123,6 +120,42 @@ main {
   font-size: 14px;
   line-height: 1.5;
   margin: 0;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #181818;
+  color: #fff;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 15px;
+}
+
+.footer-icons a img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.footer-icons a img:hover {
+  transform: scale(1.2);
+}
+
+footer .developer {
+  font-size: 16px;
+  margin: 5px 0;
+  color: #ff9800;
+}
+
+footer .copyright {
+  font-size: 14px;
+  color: #aaa;
 }
 
 /* ===== RESPONSIVO ===== */
@@ -138,10 +171,6 @@ main {
 
   .img-container {
     height: 300px;
-  }
-
-  .card-content {
-    margin-top: -40px;
   }
 }
 
@@ -159,16 +188,25 @@ main {
     height: 250px;
   }
 
-  .card-content {
-    margin-top: -30px;
-  }
-
   .card h2 {
     font-size: 18px;
   }
 
   .card p {
     font-size: 13px;
+  }
+
+  .footer-icons a img {
+    width: 35px;
+    height: 35px;
+  }
+
+  footer .developer {
+    font-size: 14px;
+  }
+
+  footer .copyright {
+    font-size: 12px;
   }
 }
 
@@ -179,9 +217,8 @@ main {
   }
 
   .menu {
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
   }
 
   #pesquisa {
@@ -193,15 +230,28 @@ main {
     height: 200px;
   }
 
-  .card-content {
-    margin-top: -20px;
-  }
-
   .card h2 {
     font-size: 16px;
   }
 
   .card p {
     font-size: 12px;
+  }
+
+  .footer-icons {
+    gap: 15px;
+  }
+
+  .footer-icons a img {
+    width: 30px;
+    height: 30px;
+  }
+
+  footer .developer {
+    font-size: 13px;
+  }
+
+  footer .copyright {
+    font-size: 11px;
   }
 }
