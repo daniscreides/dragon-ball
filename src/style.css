@@ -16,18 +16,21 @@ html, body {
 body {
   background: linear-gradient(135deg, #0a0a0a, #1b1b1b, #222);
   color: #fff;
-  perspective: 1500px; /* necessário para efeito 3D */
 }
 
 /* ===== HEADER ===== */
 header {
+  position: fixed;       /* fixo no topo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  flex-wrap: wrap;
   background: #f4f4f4;
-  margin-bottom: 50px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 header .logo {
@@ -38,14 +41,18 @@ header .logo {
 .menu {
   display: flex;
   gap: 30px;
-  flex-wrap: wrap;
 }
 
-.menu a {
+.menu a,
+.menu button {
   font-size: 22px;
   text-decoration: none;
   font-weight: bold;
   color: #333;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 #pesquisa {
@@ -53,36 +60,30 @@ header .logo {
   border-radius: 6px;
   border: 1px solid #aaa;
   max-width: 200px;
-  margin-top: 10px;
 }
 
-/* ===== MAIN / CARDS ===== */
+/* ===== MAIN GRID ===== */
 main {
   display: grid;
-  gap: 30px;
+  gap: 50px;
   width: 100%;
-  padding: 20px;
-  grid-template-columns: repeat(3, 1fr);
+  padding: 180px 20px 20px 20px; /* considera header fixo */
+  grid-template-columns: repeat(4, 1fr);
   justify-items: center;
 }
 
 .card {
   background: #181818;
-  width: 350px;
+  width: 300px;
+  padding: 20px;
   border-radius: 14px;
   text-align: center;
   border: 2px solid transparent;
-  box-shadow: 0 0 20px rgba(0,0,0,0.7);
+  box-shadow: 0 0 15px rgba(0,0,0,0.7);
   cursor: pointer;
   overflow: visible;
   position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.card:hover {
-  transform: rotateY(5deg) rotateX(5deg) translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+  transition: transform 0.3s ease;
 }
 
 .img-container {
@@ -106,20 +107,31 @@ main {
   z-index: 2;
 }
 
-.card:hover .img-container img {
-  transform: translateY(-40px) translateX(10px) scale(1.25) rotateZ(-3deg);
+.img-container:hover img {
+  transform: translateY(-20px) scale(1.2);
+}
+
+.card-content {
+  padding: 15px 10px;
+  position: relative;
+  z-index: 3;
+  background: #181818;
+  margin-top: -50px;
+  border-radius: 0 0 14px 14px;
 }
 
 .card h2 {
-  font-size: 20px;
+  font-size: 26px;
   color: #ff9800;
+  padding: 10px 0;
   margin: 10px 0 8px 0;
 }
 
 .card p {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.5;
   margin: 0;
+  padding-bottom: 5px;
 }
 
 /* ===== FOOTER ===== */
@@ -128,18 +140,18 @@ footer {
   color: #fff;
   text-align: center;
   padding: 30px 20px;
+  margin-top: 50px;
 }
 
 .footer-icons {
   display: flex;
   justify-content: center;
   gap: 25px;
-  margin-bottom: 15px;
 }
 
 .footer-icons a img {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   transition: transform 0.3s ease;
 }
 
@@ -148,20 +160,70 @@ footer {
 }
 
 footer .developer {
-  font-size: 16px;
+  font-size: 18px;
   margin: 5px 0;
   color: #ff9800;
 }
 
 footer .copyright {
   font-size: 14px;
-  color: #aaa;
+  color: #aaaaaa9c;
+}
+
+/* ===== PÁGINA SOBRE ===== */
+.sobre-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 180px 20px 50px 20px; /* considera header fixo */
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+}
+
+.sobre-page h1 {
+  font-size: 36px;
+  color: #ff9800;
+  margin-bottom: 20px;
+}
+
+.sobre-page p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #e0e0e0;
+  margin-bottom: 30px;
+}
+
+.sobre-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.sobre-buttons button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #ff9800;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.sobre-buttons button:hover {
+  transform: scale(1.05);
+  background-color: #e68a00;
 }
 
 /* ===== RESPONSIVO ===== */
 @media (max-width: 1024px) {
   main {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     padding: 15px;
   }
 
@@ -176,7 +238,7 @@ footer .copyright {
 
 @media (max-width: 768px) {
   main {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     padding: 10px;
   }
 
@@ -207,6 +269,19 @@ footer .copyright {
 
   footer .copyright {
     font-size: 12px;
+  }
+
+  .sobre-page h1 {
+    font-size: 28px;
+  }
+
+  .sobre-page p {
+    font-size: 16px;
+  }
+
+  .sobre-buttons button {
+    font-size: 14px;
+    padding: 8px 16px;
   }
 }
 
@@ -253,5 +328,22 @@ footer .copyright {
 
   footer .copyright {
     font-size: 11px;
+  }
+
+  .sobre-page h1 {
+    font-size: 24px;
+  }
+
+  .sobre-page p {
+    font-size: 14px;
+  }
+
+  .sobre-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .sobre-buttons button {
+    width: 100%;
   }
 }
