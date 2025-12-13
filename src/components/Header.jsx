@@ -1,19 +1,26 @@
 import { useNavigate, useLocation } from "react-router-dom";
+import { useState } from "react";
 import logo from "../assets/imagens/logo.png";
+
 
 export default function Header({ search, setSearch }) {
   const navigate = useNavigate();
   const location = useLocation();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const irInicio = () => {
     navigate("/");
     window.scrollTo({ top: 0, behavior: "smooth" });
+    setMenuOpen(false);
   };
 
   const irContato = () => {
     navigate("/");
+    setMenuOpen(false);
     setTimeout(() => {
-      document.querySelector("footer")?.scrollIntoView({ behavior: "smooth" });
+      document
+        .querySelector("footer")
+        ?.scrollIntoView({ behavior: "smooth" });
     }, 100);
   };
 
@@ -21,20 +28,31 @@ export default function Header({ search, setSearch }) {
     <header>
       <img src={logo} alt="Logo Dragon Ball" className="logo" />
 
-      <nav className="menu">
-        {/* SEMPRE aparece */}
+      {/* MENU */}
+      <nav className={`menu ${menuOpen ? "active" : ""}`}>
         <button onClick={irInicio}>INÍCIO</button>
 
-        {/* SÓ NA HOME */}
         {location.pathname === "/" && (
           <>
-            <button onClick={() => navigate("/sobre")}>SOBRE</button>
+            <button onClick={() => { navigate("/sobre"); setMenuOpen(false); }}>
+              SOBRE
+            </button>
             <button onClick={irContato}>CONTATO</button>
           </>
         )}
       </nav>
 
+      {/* BOTÃO HAMBURGER */}
+      <div
+        className="menu-toggle"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
+      {/* PESQUISA */}
       {location.pathname === "/" && (
         <input
           id="pesquisa"
