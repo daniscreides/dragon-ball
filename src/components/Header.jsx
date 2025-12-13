@@ -1,33 +1,37 @@
-import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import logo from "../assets/imagens/logo.png";
 
-export default function Header({ onInicioClick, onContatoClick, search, setSearch }) {
+export default function Header({ search, setSearch }) {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const handleInicio = () => {
-    if (location.pathname !== "/") {
-      navigate("/");
-      setTimeout(onInicioClick, 100); // espera para rolar após renderizar
-    } else {
-      onInicioClick();
-    }
+  const irInicio = () => {
+    navigate("/");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const irContato = () => {
+    navigate("/");
+    setTimeout(() => {
+      document.querySelector("footer")?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
   };
 
   return (
     <header>
       <img src={logo} alt="Logo Dragon Ball" className="logo" />
+
       <nav className="menu">
-        <button onClick={handleInicio}>INÍCIO</button>
+        <button onClick={irInicio}>INÍCIO</button>
         <button onClick={() => navigate("/sobre")}>SOBRE</button>
+
         {location.pathname === "/" && (
-          <button onClick={onContatoClick}>CONTATO</button>
+          <button onClick={irContato}>CONTATO</button>
         )}
       </nav>
+
       {location.pathname === "/" && (
         <input
-          type="text"
           id="pesquisa"
           placeholder="Pesquisar personagem..."
           value={search}
