@@ -218,19 +218,23 @@ footer{
     font-size:18px;
   }
   #pesquisa{
-    order:4;margin-top:10px;
+    order:4;
+    margin-top:10px;
   }
   .img-container{
     height:360px;
   }
   .img-container img{
-    width:240px;height:340px;
+    width:240px;
+    height:340px;
   }
 }
 
 @media(max-width:480px){
   header{
-    flex-direction:column;gap:15px;padding:15px;
+    flex-direction:column;
+    gap:15px;
+    padding:15px;
   }
   .menu button{
     font-size:16px;
@@ -245,6 +249,7 @@ footer{
     height:320px;
   }
   .img-container img{
-    width:220px;height:300px;
+    width:220px;
+    height:300px;
   }
 }
