@@ -139,6 +139,7 @@ main{
   margin:auto;
   padding:180px 20px 50px;
   text-align:center;
+  display: block;
 }
 
 .sobre-page h1{
@@ -263,7 +264,7 @@ footer{
   .sobre-page p{
     line-height:1.5;
   }
-  
+
   main{
     padding:160px 15px 30px;
   }
