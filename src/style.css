@@ -224,7 +224,7 @@ footer{
   }
 
     .sobre-page{
-    padding:160px 20px 40px;
+    padding:100px 20px 40px;
     min-height:auto;
   }
 
@@ -232,7 +232,7 @@ footer{
     margin-bottom:24px;
   }
   main{
-    padding:180px 20px 30px;
+    padding:140px 20px 30px;
     gap:40px;
   }
 
@@ -258,7 +258,7 @@ footer{
     width:100%;
   }
   .sobre-page{
-    padding:200px 15px 40px;
+    padding:80px 15px 40px;
   }
 
   .sobre-page p{
@@ -266,7 +266,7 @@ footer{
   }
 
   main{
-    padding:160px 15px 30px;
+    padding:120px 15px 30px;
   }
   .img-container{
     height:320px;
