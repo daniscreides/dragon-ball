@@ -1,7 +1,6 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
@@ -9,8 +8,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-html,
-body {
+html, body {
   width: 100%;
   min-height: 100vh;
 }
@@ -20,12 +18,12 @@ body {
   color: #fff;
 }
 
-/* ===== HEADER ===== */
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
+  margin-bottom: 50px;
   width: 100%;
   background: #f4f4f4;
 }
@@ -57,53 +55,74 @@ header .logo {
 /* ===== MAIN E CARDS ===== */
 main {
   display: grid;
-  gap: 20px;
+  gap: 30px;
   width: 100%;
   padding: 20px;
-  grid-template-columns: repeat(4, 1fr); /* padrão desktop */
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
 }
 
 .card {
   background: #181818;
-  width: 100%;
-  height: 500px;
-  padding: 20px;
+  width: 350px;
   border-radius: 14px;
   text-align: center;
   border: 2px solid transparent;
-  box-shadow: 0 0 10px #000;
+  box-shadow: 0 0 15px rgba(0,0,0,0.7);
   cursor: pointer;
+  overflow: visible; /* permite que a imagem flutue */
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px); /* elevação suave do card */
 }
 
 .img-container {
   width: 100%;
-  height: 200px;
-  overflow: hidden;
-  border-radius: 12px;
-  transition: 0.3s ease;
+  height: 350px; /* altura fixa do container */
+  overflow: visible;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .img-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  width: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* mantém proporção e não corta */
   border-radius: 12px;
-  transition: 0.4s ease;
+  transition: transform 0.5s ease;
+  position: relative;
+  z-index: 2;
 }
 
 .img-container:hover img {
-  transform: scale(1.1);
+  transform: translateY(-20px) scale(1.2); /* flutua levemente para fora */
+}
+
+.card-content {
+  padding: 15px 10px;
+  position: relative;
+  z-index: 3;
+  background: #181818;
+  margin-top: -50px; /* sobreposição suave da imagem flutuante */
+  border-radius: 0 0 14px 14px;
 }
 
 .card h2 {
-  font-size: 18px;
+  font-size: 20px;
   color: #ff9800;
+  margin: 10px 0 8px 0;
 }
 
 .card p {
   font-size: 14px;
-  line-height: 1.4;
-  margin: 4px 0;
+  line-height: 1.5;
+  margin: 0;
 }
 
 /* ===== RESPONSIVO ===== */
@@ -112,9 +131,48 @@ main {
     grid-template-columns: repeat(2, 1fr);
     padding: 15px;
   }
+
+  .card {
+    width: 90%;
+  }
+
+  .img-container {
+    height: 300px;
+  }
+
+  .card-content {
+    margin-top: -40px;
+  }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+
+  .card {
+    width: 95%;
+  }
+
+  .img-container {
+    height: 250px;
+  }
+
+  .card-content {
+    margin-top: -30px;
+  }
+
+  .card h2 {
+    font-size: 18px;
+  }
+
+  .card p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
   header {
     flex-direction: column;
     gap: 15px;
@@ -131,8 +189,19 @@ main {
     max-width: none;
   }
 
-  main {
-    grid-template-columns: 1fr;
-    padding: 10px;
+  .img-container {
+    height: 200px;
+  }
+
+  .card-content {
+    margin-top: -20px;
+  }
+
+  .card h2 {
+    font-size: 16px;
+  }
+
+  .card p {
+    font-size: 12px;
   }
 }
