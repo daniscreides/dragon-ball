@@ -98,8 +98,6 @@ main{
   transition:.3s;
 }
 
-.card:hover{transform:translateY(-8px)}
-
 .card h2{
   font-size:clamp(20px,2.5vw,24px);
   text-align:center;

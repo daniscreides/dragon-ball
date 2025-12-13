@@ -11,14 +11,18 @@ export default function Home({ search }) {
 
   return (
     <>
-      <main>
+      {/* TOQUE FORA REMOVE O HOVER */}
+      <main onTouchStart={() => setActiveCard(null)}>
         {filtered.map((p, index) => (
           <div
             key={p.id}
             className="card"
-            onMouseEnter={() => setActiveCard(index)}   // desktop
-            onMouseLeave={() => setActiveCard(null)}    // desktop
-            onTouchStart={() => setActiveCard(index)}   // mobile
+            onMouseEnter={() => setActiveCard(index)} // desktop
+            onMouseLeave={() => setActiveCard(null)}  // desktop
+            onTouchStart={(e) => {
+              e.stopPropagation(); // impede o main de cancelar
+              setActiveCard(index); // mobile
+            }}
           >
             <div className="img-container">
               <img
