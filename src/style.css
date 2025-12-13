@@ -221,6 +221,20 @@ footer{
     order:4;
     margin-top:10px;
   }
+
+    .sobre-page{
+    padding:160px 20px 40px;
+    min-height:auto;
+  }
+
+  .sobre-page h1{
+    margin-bottom:24px;
+  }
+  main{
+    padding:180px 20px 30px;
+    gap:40px;
+  }
+
   .img-container{
     height:360px;
   }
@@ -242,8 +256,16 @@ footer{
   #pesquisa{
     width:100%;
   }
+  .sobre-page{
+    padding:200px 15px 40px;
+  }
+
+  .sobre-page p{
+    line-height:1.5;
+  }
+  
   main{
-    padding:200px 15px 30px;
+    padding:160px 15px 30px;
   }
   .img-container{
     height:320px;
