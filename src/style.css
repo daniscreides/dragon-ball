@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
+/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
@@ -8,29 +9,35 @@
   font-family: "Poppins", sans-serif;
 }
 
+html,
 body {
-  background: linear-gradient(135deg, #0a0a0a, #1b1b1b, #222);
-  color: #fff;
+  width: 100%;
   min-height: 100vh;
 }
 
+body {
+  background: linear-gradient(135deg, #0a0a0a, #1b1b1b, #222);
+  color: #fff;
+}
+
+/* ===== HEADER ===== */
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 40px;
-  margin-bottom: 30px;
+  padding: 20px;
+  width: 100%;
   background: #f4f4f4;
 }
 
 header .logo {
-  width: 250px; /* menor tamanho */
+  width: 250px;
   height: auto;
 }
 
 .menu {
   display: flex;
-  gap: 50px;
+  gap: 30px;
 }
 
 .menu a {
@@ -38,30 +45,29 @@ header .logo {
   text-decoration: none;
   font-weight: bold;
   color: #333;
-  gap: 20px;
 }
 
 #pesquisa {
   padding: 6px;
   border-radius: 6px;
   border: 1px solid #aaa;
+  max-width: 200px;
 }
 
-/* ===== CARDS ===== */
-
+/* ===== MAIN E CARDS ===== */
 main {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  gap: 20px;
+  width: 100%;
   padding: 20px;
+  grid-template-columns: repeat(4, 1fr); /* padrão desktop */
 }
 
 .card {
   background: #181818;
-  width: 300px; 
-  height: 500px; 
+  width: 100%;
+  height: 500px;
   padding: 20px;
-  margin: auto;
   border-radius: 14px;
   text-align: center;
   border: 2px solid transparent;
@@ -98,4 +104,35 @@ main {
   font-size: 14px;
   line-height: 1.4;
   margin: 4px 0;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 1024px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  #pesquisa {
+    width: 100%;
+    max-width: none;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
 }
