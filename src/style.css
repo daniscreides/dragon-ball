@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
 
 * {
   margin: 0;
@@ -8,7 +8,8 @@
   font-family: "Poppins", sans-serif;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   overflow-x: hidden;
 }
@@ -34,7 +35,7 @@ header {
   align-items: center;
   padding: 20px 40px;
   background: #f4f4f4;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, .3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .logo {
@@ -77,7 +78,7 @@ header {
   height: 3px;
   background: #333;
   border-radius: 3px;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 main {
@@ -94,8 +95,8 @@ main {
   background: #181818;
   border-radius: 16px;
   padding: 20px;
-  box-shadow: 0 0 18px rgba(0, 0, 0, .7);
-  transition: .3s;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.7);
+  transition: 0.3s;
 }
 
 .card h2 {
@@ -123,7 +124,7 @@ main {
   width: 280px;
   height: 400px;
   object-fit: contain;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .img-container:hover img {
@@ -143,13 +144,14 @@ main {
 .sobre-page h1 {
   font-size: clamp(26px, 4vw, 36px);
   color: #ff9800;
-  margin-bottom: 30px;
+  margin: 20px 0 40px;
 }
 
 .sobre-page p {
   font-size: clamp(16px, 3vw, 22px);
   color: #e0e0e0;
   line-height: 1.6;
+  margin-bottom: 30px;
 }
 
 footer {
@@ -167,7 +169,7 @@ footer {
 
 .footer-icons img {
   width: 50px;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .footer-icons img:hover {
@@ -213,13 +215,19 @@ footer {
     padding: 200px 30px 60px;
   }
 
+  .sobre-page h1 {
+    font-size: 36px;
+    margin: 15px 0;
+  }
+
   .sobre-page p {
-    font-size: 22px;
+    font-size: 26px;
     line-height: 1.7;
+    margin: 10px;
   }
 }
 
-@media (max-width: 1439px) and (min-width: 1024px) {
+@media (min-width: 1024px) and (max-width: 1439px) {
   header {
     padding: 20px 40px;
   }
@@ -233,8 +241,15 @@ footer {
     padding: 180px 25px 50px;
   }
 
+  .sobre-page h1 {
+    font-size: 32px;
+    margin: 15px 0;
+  }
+
   .sobre-page p {
-    font-size: 20px;
+    font-size: 22px;
+    line-height: 1.7;
+    margin-bottom: 10px;
   }
 }
 
@@ -248,6 +263,10 @@ footer {
     gap: 40px;
   }
 
+  .card {
+    max-width: 280px;
+  }
+
   .img-container {
     height: 360px;
   }
@@ -257,17 +276,14 @@ footer {
     height: 340px;
   }
 
-  .card {
-    max-width: 280px;
-  }
-
   .sobre-page {
     max-width: 800px;
     padding: 140px 20px 45px;
   }
 
   .sobre-page h1 {
-    font-size: 32px;
+    font-size: 30px;
+    margin: 10px 0;
   }
 
   .sobre-page p {
