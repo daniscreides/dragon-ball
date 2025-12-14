@@ -28,7 +28,6 @@ export default function Header({ search, setSearch }) {
     <header>
       <img src={logo} alt="Logo Dragon Ball" className="logo" />
 
-      {/* MENU */}
       <nav className={`menu ${menuOpen ? "active" : ""}`}>
         <button onClick={irInicio}>INÍCIO</button>
 
@@ -42,7 +41,6 @@ export default function Header({ search, setSearch }) {
         )}
       </nav>
 
-      {/* BOTÃO HAMBURGER */}
       <div
         className="menu-toggle"
         onClick={() => setMenuOpen(!menuOpen)}
@@ -52,7 +50,6 @@ export default function Header({ search, setSearch }) {
         <span></span>
       </div>
 
-      {/* PESQUISA */}
       {location.pathname === "/" && (
         <input
           id="pesquisa"
