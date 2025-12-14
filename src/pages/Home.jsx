@@ -16,8 +16,8 @@ export default function Home({ search }) {
           <div
             key={p.id}
             className="card"
-            onMouseEnter={() => setActiveCard(index)} 
-            onMouseLeave={() => setActiveCard(null)} 
+            onMouseEnter={() => setActiveCard(index)}
+            onMouseLeave={() => setActiveCard(null)}
             onTouchStart={(e) => {
               e.stopPropagation();
               setActiveCard(index);

@@ -40,11 +40,13 @@ header {
 
 .logo {
   width: 230px;
+  cursor: pointer;
 }
 
 .menu {
   display: flex;
   gap: 30px;
+  align-items: center;
 }
 
 .menu button {
@@ -96,7 +98,6 @@ main {
   border-radius: 16px;
   padding: 20px;
   box-shadow: 0 0 18px rgba(0, 0, 0, 0.7);
-  transition: 0.3s;
 }
 
 .card h2 {
@@ -110,7 +111,6 @@ main {
   font-size: clamp(14px, 2vw, 16px);
   color: #ccc;
   text-align: center;
-  line-height: 1.4;
 }
 
 .img-container {
@@ -127,31 +127,16 @@ main {
   transition: 0.5s;
 }
 
-.img-container:hover img {
+.img-container:hover img,
+.img-container img.hovered {
   transform: translateY(-40px) scale(1.3);
 }
 
 .sobre-page {
   max-width: 900px;
-  width: 100%;
-  min-height: 100vh;
   margin: auto;
   padding: 180px 20px 50px;
   text-align: center;
-  display: block;
-}
-
-.sobre-page h1 {
-  font-size: clamp(26px, 4vw, 36px);
-  color: #ff9800;
-  margin: 20px 0 40px;
-}
-
-.sobre-page p {
-  font-size: clamp(16px, 3vw, 22px);
-  color: #e0e0e0;
-  line-height: 1.6;
-  margin-bottom: 30px;
 }
 
 footer {
@@ -160,96 +145,9 @@ footer {
   background: #181818;
 }
 
-.footer-icons {
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-  margin-bottom: 5px;
-}
-
-.footer-icons img {
-  width: 50px;
-  transition: 0.3s;
-}
-
-.footer-icons img:hover {
-  transform: scale(1.2);
-}
-
-.developer {
-  color: #ff9800;
-  font-size: clamp(18px, 3vw, 22px);
-}
-
-.copyright {
-  font-size: clamp(12px, 2vw, 14px);
-  color: #aaa;
-}
-
 @media (min-width: 1440px) {
   header {
     padding: 25px 80px;
-  }
-
-  main {
-    max-width: 1400px;
-    margin: auto;
-    gap: 60px;
-  }
-
-  .card {
-    max-width: 320px;
-  }
-
-  .img-container {
-    height: 460px;
-  }
-
-  .img-container img {
-    width: 300px;
-    height: 430px;
-  }
-
-  .sobre-page {
-    max-width: 1000px;
-    padding: 200px 30px 60px;
-  }
-
-  .sobre-page h1 {
-    font-size: 36px;
-    margin: 15px 0;
-  }
-
-  .sobre-page p {
-    font-size: 26px;
-    line-height: 1.7;
-    margin: 10px;
-  }
-}
-
-@media (min-width: 1024px) and (max-width: 1439px) {
-  header {
-    padding: 20px 40px;
-  }
-
-  main {
-    gap: 50px;
-  }
-
-  .sobre-page {
-    max-width: 900px;
-    padding: 180px 25px 50px;
-  }
-
-  .sobre-page h1 {
-    font-size: 32px;
-    margin: 15px 0;
-  }
-
-  .sobre-page p {
-    font-size: 22px;
-    line-height: 1.7;
-    margin-bottom: 10px;
   }
 }
 
@@ -260,35 +158,36 @@ footer {
 
   main {
     padding: 160px 20px 30px;
-    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
   }
 
-  .card {
-    max-width: 280px;
+  .menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #f4f4f4;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 25px 0;
+    transform: translateY(-150%);
+    transition: transform 0.4s ease;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
   }
 
-  .img-container {
-    height: 360px;
+  .menu.active {
+    transform: translateY(0);
   }
 
-  .img-container img {
-    width: 240px;
-    height: 340px;
-  }
-
-  .sobre-page {
-    max-width: 800px;
-    padding: 140px 20px 45px;
-  }
-
-  .sobre-page h1 {
-    font-size: 30px;
-    margin: 10px 0;
-  }
-
-  .sobre-page p {
-    font-size: 18px;
-    line-height: 1.6;
+  #pesquisa {
+    width: 90%;
+    max-width: 320px;
   }
 }
 
@@ -298,41 +197,14 @@ footer {
   }
 
   .logo {
-    width: 170px;
+    width: 160px;
   }
 
   main {
     padding: 140px 15px 30px;
-    gap: 30px;
-  }
-
-  .card {
-    max-width: 100%;
-  }
-
-  .img-container {
-    height: 300px;
-  }
-
-  .img-container img {
-    width: 210px;
-    height: 290px;
   }
 
   .menu button {
     font-size: 16px;
-  }
-
-  .sobre-page {
-    padding: 110px 15px 40px;
-  }
-
-  .sobre-page h1 {
-    font-size: 26px;
-  }
-
-  .sobre-page p {
-    font-size: 16px;
-    line-height: 1.5;
   }
 }
