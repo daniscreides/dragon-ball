@@ -30,9 +30,9 @@ header {
   top: 0;
   width: 100%;
   z-index: 1000;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 20px 40px;
   background: #f4f4f4;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -40,13 +40,11 @@ header {
 
 .logo {
   width: 230px;
-  cursor: pointer;
+  height: auto;
 }
 
 .menu {
   display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 40px;
 }
 
@@ -57,6 +55,7 @@ header {
   font-weight: 600;
   color: #333;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .menu button:hover {
@@ -66,9 +65,8 @@ header {
 #pesquisa {
   padding: 6px 10px;
   border-radius: 6px;
-  border: none;
-  outline: none;
-  font-size: 12px;
+  border: 1px solid #aaa;
+  max-width: 200px;
 }
 
 .menu-toggle {
@@ -138,7 +136,7 @@ main {
 
 .sobre-page {
   max-width: 900px;
-  margin: auto;
+  margin: 0 auto;
   padding: 190px 20px 40px;
   text-align: center;
   display: flex;
@@ -154,6 +152,29 @@ main {
   margin-bottom: 12px;
   color: #ccc;
   line-height: 1.6;
+}
+.sobre-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.sobre-buttons button {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  background: #ff9800;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.sobre-buttons button:hover {
+  transform: scale(1.05);
+  background-color: #e68a00;
 }
 
 footer {
