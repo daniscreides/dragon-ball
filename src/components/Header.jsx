@@ -27,7 +27,6 @@ export default function Header({ search, setSearch }) {
 
   return (
     <header>
-      {/* LOGO */}
       <img
         src={logo}
         alt="Logo Dragon Ball"
@@ -35,7 +34,11 @@ export default function Header({ search, setSearch }) {
         onClick={irInicio}
       />
 
-      <nav className={`menu ${menuOpen ? "active" : ""}`}>
+      <nav
+        className={`menu ${menuOpen ? "active" : ""} ${
+          location.pathname === "/sobre" ? "menu-sobre" : ""
+        }`}
+      >
         <button onClick={irInicio}>INÍCIO</button>
 
         {location.pathname === "/" && (
@@ -45,6 +48,7 @@ export default function Header({ search, setSearch }) {
           </>
         )}
       </nav>
+
 
       {location.pathname === "/" && (
         <input

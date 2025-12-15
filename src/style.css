@@ -49,6 +49,10 @@ header {
   gap: 40px;
 }
 
+.menu-sobre {
+  justify-content: flex-end;
+}
+
 .menu button {
   background: none;
   border: none;
@@ -156,14 +160,14 @@ main {
   line-height: 1.6;
 }
 
-.sobre-buttons {
+.menu-buttons {
   display: flex;
   justify-content: flex-end;
   gap: 20px;
   flex-wrap: wrap;
 }
 
-.sobre-buttons button {
+.menu-buttons button {
   padding: 12px 24px;
   font-size: 16px;
   font-weight: 600;
@@ -175,7 +179,7 @@ main {
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.sobre-buttons button:hover {
+.menu-buttons button:hover {
   transform: scale(1.05);
   background-color: #e68a00;
 }
@@ -247,6 +251,10 @@ footer {
     transition: transform 0.4s ease;
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
   }
+
+  .menu-sobre {
+  justify-content: center;
+}
 
   .menu.active {
     transform: translateY(0);
