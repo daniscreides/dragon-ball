@@ -30,7 +30,8 @@ header {
   top: 0;
   width: 100%;
   z-index: 1000;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
   padding: 20px 40px;
   background: #f4f4f4;
@@ -43,7 +44,6 @@ header {
 }
 
 .menu {
-  flex: 1; 
   display: flex;
   justify-content: center;
   gap: 30px;
@@ -66,7 +66,7 @@ header {
   padding: 6px 10px;
   border-radius: 6px;
   border: none;
-  margin-left: auto;
+  justify-self: end;
 }
 
 .menu-toggle {
@@ -143,13 +143,13 @@ main {
   flex-direction: column;
 }
 .sobre-page h1 {
-  font-size: clamp(28px, 4vw, 36px);
+  font-size: clamp(30px, 5vw, 40px);
   margin-bottom: 30px;
   color: #ff9800;
 }
 .sobre-page p {
-  font-size: clamp(16px, 2.5vw, 18px);
-  margin-bottom: 20px;
+  font-size: clamp(18px, 3vw, 22px);
+  margin-bottom: 16px;
   color: #ccc;
   line-height: 1.6;
 }
