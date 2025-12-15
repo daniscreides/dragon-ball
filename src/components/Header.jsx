@@ -27,6 +27,7 @@ export default function Header({ search, setSearch }) {
 
   return (
     <header>
+      {/* LOGO */}
       <img
         src={logo}
         alt="Logo Dragon Ball"
@@ -39,26 +40,20 @@ export default function Header({ search, setSearch }) {
 
         {location.pathname === "/" && (
           <>
-            <button
-              onClick={() => {
-                navigate("/sobre");
-                setMenuOpen(false);
-              }}
-            >
-              SOBRE
-            </button>
-
+            <button onClick={() => navigate("/sobre")}>SOBRE</button>
             <button onClick={irContato}>CONTATO</button>
-
-            <input
-              id="pesquisa"
-              placeholder="Pesquisar personagem..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            />
           </>
         )}
       </nav>
+
+      {location.pathname === "/" && (
+        <input
+          id="pesquisa"
+          placeholder="Pesquisar personagem..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      )}
 
       <div
         className="menu-toggle"

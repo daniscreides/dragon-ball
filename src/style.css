@@ -30,9 +30,9 @@ header {
   top: 0;
   width: 100%;
   z-index: 1000;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: space-between;
   padding: 20px 40px;
   background: #f4f4f4;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -40,11 +40,12 @@ header {
 
 .logo {
   width: 230px;
-  height: auto;
+  cursor: pointer;
 }
 
 .menu {
   display: flex;
+  justify-content: center;
   gap: 40px;
 }
 
@@ -55,7 +56,6 @@ header {
   font-weight: 600;
   color: #333;
   cursor: pointer;
-  text-decoration: none;
 }
 
 .menu button:hover {
@@ -63,6 +63,7 @@ header {
 }
 
 #pesquisa {
+  justify-self: end;
   padding: 6px 10px;
   border-radius: 6px;
   border: 1px solid #aaa;
@@ -83,7 +84,6 @@ header {
   border-radius: 3px;
   transition: 0.3s;
 }
-
 
 main {
   padding: 190px 30px 40px;
@@ -142,17 +142,20 @@ main {
   display: flex;
   flex-direction: column;
 }
+
 .sobre-page h1 {
   font-size: clamp(30px, 5vw, 40px);
   margin-bottom: 26px;
   color: #ff9800;
 }
+
 .sobre-page p {
   font-size: clamp(18px, 3vw, 22px);
   margin-bottom: 12px;
   color: #ccc;
   line-height: 1.6;
 }
+
 .sobre-buttons {
   display: flex;
   justify-content: center;
@@ -209,8 +212,6 @@ footer {
   color: #aaa;
 }
 
-
-
 @media (min-width: 1440px) {
   header {
     padding: 25px 80px;
@@ -254,6 +255,7 @@ footer {
   #pesquisa {
     width: 90%;
     max-width: 320px;
+    justify-self: center;
   }
 }
 
