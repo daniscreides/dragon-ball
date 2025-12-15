@@ -138,19 +138,19 @@ main {
 .sobre-page {
   max-width: 900px;
   margin: auto;
-  padding: 190px 20px 50px;
+  padding: 190px 20px 40px;
   text-align: center;
   display: flex;
   flex-direction: column;
 }
 .sobre-page h1 {
   font-size: clamp(30px, 5vw, 40px);
-  margin-bottom: 30px;
+  margin-bottom: 26px;
   color: #ff9800;
 }
 .sobre-page p {
   font-size: clamp(18px, 3vw, 22px);
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   color: #ccc;
   line-height: 1.6;
 }
