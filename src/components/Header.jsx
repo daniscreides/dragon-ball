@@ -19,7 +19,6 @@ export default function Header({ search, setSearch }) {
     setMenuOpen(false);
   };
 
-
   const irContato = () => {
     navigate("/");
     setMenuOpen(false);
@@ -42,6 +41,15 @@ export default function Header({ search, setSearch }) {
           location.pathname === "/sobre" ? "menu-sobre" : ""
         }`}
       >
+        {/* BOTÃO X */}
+        <button
+          className="menu-close"
+          onClick={() => setMenuOpen(false)}
+          aria-label="Fechar menu"
+        >
+          ✕
+        </button>
+
         <button onClick={irInicio}>INÍCIO</button>
 
         {location.pathname === "/" && (
@@ -51,7 +59,6 @@ export default function Header({ search, setSearch }) {
           </>
         )}
       </nav>
-
 
       {location.pathname === "/" && (
         <input
