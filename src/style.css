@@ -233,6 +233,14 @@ footer {
 }
 
 @media (max-width: 768px) {
+  header {
+    grid-template-columns: auto auto;
+  }
+
+  .logo {
+    max-width: 180px;
+  }
+
   .menu-toggle {
     display: flex;
   }
@@ -246,41 +254,81 @@ footer {
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    padding: 25px 0;
+    padding: 25px 0 15px;
     transform: translateY(-150%);
     transition: transform 0.4s ease;
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
   }
-
-  .menu-sobre {
-  justify-content: center;
-}
 
   .menu.active {
     transform: translateY(0);
   }
 
   #pesquisa {
+    display: none;
+  }
+
+  .menu.active + #pesquisa {
+    display: block;
     width: 90%;
     max-width: 320px;
-    justify-self: center;
+    margin: 10px auto 0;
   }
 }
 
 @media (max-width: 480px) {
   header {
     padding: 15px;
+    grid-template-columns: auto auto;
   }
 
   .logo {
     width: 160px;
   }
 
-  main {
-    padding: 140px 15px 30px;
+  .menu-toggle {
+    display: flex;
+  }
+
+  .menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #f4f4f4;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 0 12px;
+    transform: translateY(-150%);
+    transition: transform 0.4s ease;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .menu.active {
+    transform: translateY(0);
   }
 
   .menu button {
     font-size: 16px;
+  }
+
+  .menu.menu-sobre button {
+    display: none;
+  }
+
+  #pesquisa {
+    display: none;
+  }
+
+  .menu.active + #pesquisa {
+    display: block;
+    width: 92%;
+    max-width: 300px;
+    margin: 8px auto 0;
+  }
+
+  main {
+    padding: 140px 15px 30px;
   }
 }

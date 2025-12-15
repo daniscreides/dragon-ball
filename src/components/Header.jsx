@@ -12,10 +12,13 @@ export default function Header({ search, setSearch }) {
   }, [location.pathname]);
 
   const irInicio = () => {
-    navigate("/");
+    if (location.pathname !== "/") {
+      navigate("/");
+    }
     window.scrollTo({ top: 0, behavior: "smooth" });
     setMenuOpen(false);
   };
+
 
   const irContato = () => {
     navigate("/");
