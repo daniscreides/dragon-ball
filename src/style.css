@@ -89,6 +89,14 @@ header {
   transition: 0.3s;
 }
 
+.menu.menu-sobre:not(.active) button {
+  display: none;
+}
+
+.menu.menu-sobre.active button {
+  display: block;
+}
+
 main {
   padding: 190px 30px 40px;
   display: grid;
@@ -264,14 +272,6 @@ footer {
     transform: translateY(0);
   }
 
-  .menu.menu-sobre button {
-    display: none;
-  }
-
-  .menu.menu-sobre.active button {
-    display: block;
-  }
-
   #pesquisa {
     display: none;
   }
@@ -303,13 +303,6 @@ footer {
     font-size: 16px;
   }
 
-  .menu.menu-sobre button {
-    display: none;
-  }
-
-  .menu.menu-sobre.active button {
-    display: block;
-  }
 
   #pesquisa {
     display: none;
