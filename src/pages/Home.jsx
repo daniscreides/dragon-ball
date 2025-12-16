@@ -2,6 +2,11 @@ import { useState } from "react";
 import { personagens } from "../data";
 import Footer from "../components/Footer";
 
+const formatNumber = (value) => {
+  if (typeof value === "string") return value;
+  return value.toLocaleString("pt-BR");
+};
+
 export default function Home({ search }) {
   const [activeCard, setActiveCard] = useState(null);
 
@@ -33,7 +38,12 @@ export default function Home({ search }) {
 
             <h2>{p.nome}</h2>
             <p>Raça: {p.raca}</p>
-            <p>Ki: {p.ki}</p>
+
+            <p>Ki Inicial: {formatNumber(p.ki)}</p>
+
+            {p.kiMaximo && (
+              <p>Ki Máximo: {formatNumber(p.kiMaximo)}</p>
+            )}
           </div>
         ))}
       </main>

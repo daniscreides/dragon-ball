@@ -1,20 +1,19 @@
 export default function Sobre() {
   return (
     <main className="sobre-page">
-      <h1>Sobre</h1>
+      <h1>SOBRE</h1>
 
       <p>
-        Site desenvolvido durante curso front-end como projeto de conclusão. O objetivo é apresentar personagens do universo Dragon Ball de forma
-        interativa e visualmente atraente.
+        O site foi desenvolvido durante um curso de Front-End como projeto de conclusão. Ele apresenta personagens do universo Dragon Ball de forma interativa e visualmente atraente, com dados obtidos diretamente da API Dragon Ball API.
       </p>
 
       <p>
-        O objetivo é praticar componentização, organização de dados, responsividade e boas práticas de frontend moderno. Todas as informações são carregadas a partir de um arquivo de dados centralizado, utilizando importação de imagens locais.
+        O projeto teve como objetivo praticar componentização, organização de dados, responsividade e aplicação de boas práticas de Front-End moderno. Todas as informações exibidas são carregadas a partir de um arquivo de dados centralizado, com imagens importadas localmente para garantir desempenho e consistência visual.
       </p>
-      
-      <p>
-        Desenvolvido por Daniscreides.
-      </p>
+
+      <p className="developer">Desenvolvido por Daniscreides</p>
+      <p className="copyright">2025 Personagens Dragon Ball</p>
+
     </main>
   );
 }
