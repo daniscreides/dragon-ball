@@ -10,10 +10,6 @@ export default function Sobre() {
       <p>
         O projeto teve como objetivo praticar componentização, organização de dados, responsividade e aplicação de boas práticas de Front-End moderno. Todas as informações exibidas são carregadas a partir de um arquivo de dados centralizado, com imagens importadas localmente para garantir desempenho e consistência visual.
       </p>
-
-      <p className="developer">Desenvolvido por Daniscreides</p>
-      <p className="copyright">2025 Personagens Dragon Ball</p>
-
     </main>
   );
 }
