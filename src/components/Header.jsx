@@ -41,7 +41,6 @@ export default function Header({ search, setSearch }) {
           location.pathname === "/sobre" ? "menu-sobre" : ""
         }`}
       >
-        {/* BOTÃO X */}
         <button
           className="menu-close"
           onClick={() => setMenuOpen(false)}
