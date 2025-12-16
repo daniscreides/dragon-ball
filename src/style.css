@@ -157,7 +157,7 @@ main {
 .sobre-page {
   max-width: 900px;
   margin: 0 auto;
-  padding: 170px 20px 40px;
+  padding: 160px 20px 40px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -165,13 +165,13 @@ main {
 
 .sobre-page h1 {
   font-size: clamp(30px, 5vw, 40px);
-  margin-bottom: 26px;
+  margin-bottom: 22px;
   color: #ff9800;
 }
 
 .sobre-page p {
   font-size: clamp(18px, 3vw, 22px);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   color: #ccc;
   line-height: 1.6;
 }
@@ -309,6 +309,10 @@ footer {
 
   .menu.active + #pesquisa {
     display: block;
+  }
+
+  .sobre-page {
+    padding: 140px 15px 40px;
   }
 
   .menu-close {
