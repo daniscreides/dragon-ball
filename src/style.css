@@ -240,9 +240,21 @@ footer {
   header {
     padding: 25px 80px;
   }
+
+  .logo {
+    width: 250px;
+  }
+
+  main {
+    padding: 200px 60px 50px;
+  }
 }
 
 @media (max-width: 1023px) {
+  header {
+    padding: 20px 30px;
+  }
+
   .logo {
     width: 190px;
   }
@@ -254,7 +266,8 @@ footer {
 
 @media (max-width: 768px) {
   header {
-    grid-template-columns: auto auto;
+    padding: 18px 20px;
+    grid-template-columns: 1fr auto;
   }
 
   .logo {
@@ -267,13 +280,14 @@ footer {
 
   .menu {
     position: absolute;
-    top: 10px;
+    top: 100%;
     left: 0;
     right: 0;
     background: #f4f4f4;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 18px;
     padding: 25px 0 15px;
     transform: translateY(-150%);
     transition: transform 0.4s ease;
@@ -282,29 +296,40 @@ footer {
 
   .menu.active {
     transform: translateY(0);
+  }
+
+  .menu button {
+    font-size: 18px;
+    order: 1;
+  }
+
+  #pesquisa {
+    display: none;
+    order: 2;
+    width: 90%;
+    max-width: 320px;
+    margin: 15px auto 0;
+  }
+
+  .menu.active + #pesquisa {
     display: block;
   }
 
   .menu-close {
     display: block;
+    order: 3;
+    margin-top: 18px;
+    font-size: 28px;
   }
 
-  #pesquisa {
-    display: none;
-  }
-
-  .menu.active + #pesquisa {
-    display: block;
-    width: 90%;
-    max-width: 320px;
-    margin: 10px auto 0;
+  main {
+    padding: 150px 15px 30px;
   }
 }
 
 @media (max-width: 480px) {
   header {
-    padding: 15px;
-    grid-template-columns: auto auto;
+    padding: 16px;
   }
 
   .logo {
@@ -312,7 +337,7 @@ footer {
   }
 
   .menu {
-    gap: 16px;
+    gap: 14px;
     padding: 20px 0 12px;
   }
 
@@ -320,23 +345,16 @@ footer {
     font-size: 16px;
   }
 
-  .menu-close {
-    font-size: 26px;
-    margin-right: 16px;
-  }
-
   #pesquisa {
-    display: none;
-  }
-
-  .menu.active + #pesquisa {
-    display: block;
     width: 92%;
     max-width: 300px;
-    margin: 8px auto 0;
+  }
+
+  .menu-close {
+    font-size: 26px;
   }
 
   main {
-    padding: 140px 15px 30px;
+    padding: 140px 12px 30px;
   }
 }
